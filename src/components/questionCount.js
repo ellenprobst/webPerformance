@@ -3,7 +3,7 @@ import React from 'react';
 const QuestionCount = (props) => {
 	return (
 		<div>
-			<h3>{props.counter} of 11</h3>
+			<p>{props.counter} / 11</p>
 		</div>
 	)
 }

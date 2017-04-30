@@ -1,9 +1,18 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 const question = (props) => {
 	return (
-		<div>
-			<h2>{props.question}</h2>
+		<div className="question">
+			<ReactCSSTransitionGroup
+	          transitionName="example"
+	          transitionAppear={true} 
+	          transitionAppearTimeout={600} 
+	          transitionEnterTimeout={600} 
+	          transitionLeaveTimeout={600}
+	          >
+	          <h2 key={props.counter}>{props.question}</h2>
+	          </ReactCSSTransitionGroup>
 		</div>
 	)
 }
