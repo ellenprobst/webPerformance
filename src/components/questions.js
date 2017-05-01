@@ -1,43 +1,48 @@
 const questions = [
 	{
-		q: "Did you minify your css file?",
-		info: "Did you minify your css file? Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ut ex officia tempore neque accusantium sit officiis quibusdam voluptatem itaque, adipisci praesentium voluptates impedit fugiat a veniam doloremque, dolore blanditiis."
+		q: "Are your CSS files combined?",
+		info: "Combining all of your CSS into one file substantially reduces the amount of time it takes to load your web pages. The more files you have, the more requests are required and the more time a web browser needs to load your page."
 	},
 	{
-		q: "Did you minify your JS file?",
-		info: "Did you minify your JS file? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem saepe sunt blanditiis similique nesciunt, atque deleniti eum ullam quis iusto dolore reiciendis molestias iure, dolores, quaerat rem officia debitis soluta!"
+		q: "Is there any unused CSS?",
+		info: "Unused entries in your CSS files affect the site’s performance as the browser has to do extra work parsing all the extra rules. You can easily check for unused CSS in the Chrome DevTools under the Audits tab."
+
 	},
 	{
-		q: "Did you scale images?",
-		info: "Did you scale images? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum officia distinctio tempora consequuntur, illum sit sed sequi doloremque, eveniet in consectetur quam rem dolor cupiditate vel assumenda id. Laboriosam, qui?"
+		q: "Did you compress all images?",
+		info: "It's best to keep your file sizes as small as possible and up to 400KB max. If you are using Photoshop you can use the save for web option. Or you can use a free tool like Kraken or Pixlr to compress the files."
 	},
 	{
-		q: "Did you resize images?",
-		info: "Did you resize images?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique harum nam omnis veritatis, autem consequuntur voluptatum asperiores laboriosam quasi. Non error numquam sint quo aliquam accusamus voluptatem fuga impedit obcaecati."
+		q: "Are your images sized correctly?",
+		info: "Reduce the number of unnecessary pixels by scaling your images to their display size. If you are displaying a 200×200 image, then don’t display a 400×400 at 200×200 size."
 	},
 	{
-		q: "Can you replace any images with css?",
-		info: "Can you replace any images with css?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vitae provident laudantium perspiciatis unde itaque, in iure, autem harum libero commodi deleniti tempore natus quo quas adipisci modi omnis. Consectetur."
+		q: "Are your images optimized for viewport size?",
+		info: "Do you switch images based on display density or viewport size?"
 	},
 	{
-		q: "Did you use less than 3 fonts?",
-		info: "Did you use less than 3 fonts?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat odit, assumenda optio temporibus excepturi qui, ut enim vitae dolorum, consectetur quia? Illum, esse nemo nostrum minima vitae a voluptas sapiente!"
+		q: "Can you replace images with css?",
+		info: "You can use CSS features to create styles, like gradients and shadow, that would previously have required images. However if over-used it may hinder performance. Also don't embed text into images, place it in your markup where it is accessible and searchable."
 	},
 	{
-		q: "Is everything needed?",
+		q: "Are you using less than 3 fonts?",
+		info: "It is better not to use too many fonts on your pages, and, for each font, minimize the number of used variants. This helps produce a more consistent and a faster experience for your users."
+	},
+	{
+		q: "Did you minify your CSS?",
+		info: "The best thing you can do to improve page-load speed is to minimize the overall download size by optimizing and compressing the remaining resources."
+	},
+	{
+		q: "Did you minify your JavaScript?",
+		info: "The best thing you can do to improve page-load speed is to minimize the overall download size by optimizing and compressing the remaining resources."
+	},
+	{
+		q: "xxIs everything needed?",
 		info: "Is everything needed?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nulla nobis sunt modi, sed dolore assumenda ut possimus ducimus accusamus at laboriosam! Explicabo aliquid inventore tempore ea, dolores dolore. Natus."
 	},
 	{
 		q: "Are you using CDN?",
 		info: "Are you using CDN?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae molestias aut dignissimos iure a maxime error, distinctio fuga quisquam ipsa nihil eius culpa incidunt laudantium fugiat eligendi asperiores ea expedita."
-	},
-	{
-		q: "Is there any unused css?",
-		info: "Is there any unused css?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore rem, optio a necessitatibus provident laborum, tempora quam, cum animi ea fugiat ipsa, nostrum sapiente in cupiditate beatae nihil soluta repellendus."
-	},
-	{
-		q: "Do you switch images based on display density or viewport size?",
-		info: "Do you switch images based on display density or viewport size?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, voluptas inventore commodi ullam incidunt laudantium modi soluta! Reprehenderit optio sapiente porro expedita earum autem accusamus excepturi totam libero. Illo, doloribus!"
 	},
 	{
 		q: "Are there any broken urls?",
