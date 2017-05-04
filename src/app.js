@@ -29,7 +29,7 @@ class App extends React.Component {
 
 	nextQuestion() {
 		let newCounter = this.state.counter + 1;
-		if(newCounter <= 11 && newCounter >= 0){ 
+		if(newCounter <= 12 && newCounter >= 0){ 
 			this.setState({ 
 				counter : newCounter,
 				question : questions[newCounter].q,
@@ -59,12 +59,14 @@ class App extends React.Component {
 
 	showInfobox(e) {
 		const main = document.querySelector('.content');
-		main.classList.toggle('hide');
-
 		const resources = document.querySelector('.infoBox__resources');
 		const tips = document.querySelector('.infoBox__tips')
-		console.log(e.currentTarget)
+
+		main.classList.toggle('hide');
+
+		if (e.currentTarget.value !== "infoBox"){
 		e.currentTarget.value === "resources" ? resources.classList.toggle('show') : tips.classList.toggle('show')
+		}
 	}
 
 	handleAnswer(e) {
@@ -91,7 +93,7 @@ class App extends React.Component {
 	getResults() {
 		const results = this.state.yesQuestions;
 		const resultNumber = results.length;
-		const finalResult = (resultNumber / 12 * 100).toFixed(0);
+		const finalResult = (resultNumber / 13 * 100).toFixed(0);
 		const digits = finalResult.toString().split('');
 		return digits;
 	}

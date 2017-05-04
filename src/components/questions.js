@@ -37,20 +37,20 @@ const questions = [
 		info: "The best thing you can do to improve page-load speed is to minimize the overall download size by optimizing and compressing the remaining resources."
 	},
 	{
-		q: "xxIs everything needed?",
-		info: "Is everything needed?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nulla nobis sunt modi, sed dolore assumenda ut possimus ducimus accusamus at laboriosam! Explicabo aliquid inventore tempore ea, dolores dolore. Natus."
+		q: "Are you leveraging browser caching?",
+		info: "Caching can be used to reduce the number of requests made to a server. Cache-Control directives control who can cache the response, under which conditions, and for how long. Audit your pages to identify which resources can be cached and ensure that they return appropriate Cache-Control and ETag headers."
 	},
 	{
 		q: "Are you using CDN for popular libraries?",
-		info: "Are you using CDN?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae molestias aut dignissimos iure a maxime error, distinctio fuga quisquam ipsa nihil eius culpa incidunt laudantium fugiat eligendi asperiores ea expedita."
+		info: "There’s a high probability that someone visiting your pages has already visited a site using the same CDN. Therefore, the file has already been cached by the browser and won’t need to be downloaded again."
 	},
 	{
 		q: "Did you remove any broken urls?",
-		info: "Are there any broken urls?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus iste iure, iusto, modi sequi impedit molestiae, distinctio aspernatur, ipsa temporibus voluptatem molestias odit commodi pariatur. Laborum facere voluptas, mollitia."
+		info: "HTTP requests are expensive so making a request and getting a useless response (i.e. 404 Not Found) is totally unnecessary and will slow down the user experience."
 	},
 	{
-		q: "Are there any unnecessary redirects?",
-		info: "Are there any unnecessary redirects?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic maxime tenetur, voluptates, dolorum modi commodi voluptas, ullam consectetur odit soluta dignissimos explicabo impedit. Repellat quibusdam fuga dolores sit laborum, numquam."
+		q: "Are you defer loading JavaScript?",
+		info: "The loading and execution of scripts that are not necessary for the initial page render should be made asynchronous or deferred until after the first render or other critical parts of the page have finished loading. Doing so can help reduce resource contention and improve performance."
 	}
 ]
 

@@ -13,7 +13,7 @@ const Checklist = (props) => {
 				{props.counter >= 1 ? <button className="back small" onClick={props.previousQuestion}> <i className="fa fa-chevron-left" aria-hidden="true"></i></button> : ""}
 				<Question question={props.question} counter={props.counter}  />
 			</div>
-			<button className="small open" onClick={props.showInfobox}><i className="fa fa-question-circle" aria-hidden="true"></i></button>
+			<button className="small open" onClick={props.showInfobox} value="infoBox"><i className="fa fa-question-circle" aria-hidden="true"></i></button>
 			<AnswerOptions handleAnswer={props.handleAnswer} />
 			<InfoBox info={props.info} close={props.showInfobox}/>
 		</div>

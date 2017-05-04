@@ -44,6 +44,9 @@ const Results = (props) => {
 						<li><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed Test</a></li>
 						<li><a href="https://varvy.com/pagespeed/" target="_blank">Tips on Page speed optimization</a></li>
 						<li><a href="https://mobiforge.com/research-analysis/12-expert-tips-on-how-to-boost-web-performance" target="_blank">12 Tips to boost performance</a></li>
+						<li><a href="https://varvy.com/pagespeed/leverage-browser-caching.html" target="_blank">How browser caching works</a></li>
+						<li><a href="https://varvy.com/pagespeed/defer-loading-javascript.html" target="_blank">How to defer loading of JavaScript</a></li>
+						
 					</ul>
 				</div>
 			</div>

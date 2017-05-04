@@ -5,7 +5,7 @@ const question = (props) => {
 	return (
 		<div className="question">
 			<ReactCSSTransitionGroup
-	          transitionName="example"
+	          transitionName="question"
 	          transitionAppear={true} 
 	          transitionAppearTimeout={600} 
 	          transitionEnterTimeout={600} 
