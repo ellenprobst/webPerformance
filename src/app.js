@@ -14,27 +14,26 @@ class App extends React.Component {
 			question : questions[0].q,
 			info : questions[0].info,
 			counter : 0,
-			yes : 0,
 			start : true,
-			result: false
-			//set state for every question, if yes than state
+			result: false,
+			yesQuestions : []
 		}
-		this.handleChange = this.handleChange.bind(this);
+		this.handleAnswer = this.handleAnswer.bind(this);
 		this.previousQuestion = this.previousQuestion.bind(this);
 		this.startCheckList = this.startCheckList.bind(this);
 		this.showInfobox = this.showInfobox.bind(this);
 		this.renderChecklist = this.renderChecklist.bind(this); 
-		this.renderResults = this.renderResults.bind(this); 
+		this.renderResults = this.renderResults.bind(this);
+		this.getResults = this.getResults.bind(this); 
 	}
 
-	handleChange() {
+	nextQuestion() {
 		let newCounter = this.state.counter + 1;
-		console.log(newCounter);
 		if(newCounter <= 11 && newCounter >= 0){ 
 			this.setState({ 
 				counter : newCounter,
 				question : questions[newCounter].q,
-				info : questions[newCounter].info,
+				info : questions[newCounter].info
 			});
 		} else {
 			this.setState({ 
@@ -58,14 +57,48 @@ class App extends React.Component {
 		this.setState({ start: false});
 	}
 
-	showInfobox() {
+	showInfobox(e) {
 		const main = document.querySelector('.content');
 		main.classList.toggle('hide');
+
+		const resources = document.querySelector('.infoBox__resources');
+		const tips = document.querySelector('.infoBox__tips')
+		console.log(e.currentTarget)
+		e.currentTarget.value === "resources" ? resources.classList.toggle('show') : tips.classList.toggle('show')
+	}
+
+	handleAnswer(e) {
+		const currentYesQuestion = this.state.question; //string
+		const yesQuestions = this.state.yesQuestions;
+
+		if(e.target.value === "yes") {
+			if(yesQuestions.includes(currentYesQuestion) != true) {
+				yesQuestions.push(currentYesQuestion);
+			};	
+		} else if(e.target.value === "no"){
+			if(yesQuestions.includes(currentYesQuestion)) {
+				const index = yesQuestions.indexOf(currentYesQuestion);
+				yesQuestions.splice(index,1);
+			}
+		}
+
+		this.setState({
+			yesQuestions : yesQuestions 
+		});
+		this.nextQuestion();
+	}
+
+	getResults() {
+		const results = this.state.yesQuestions;
+		const resultNumber = results.length;
+		const finalResult = (resultNumber / 12 * 100).toFixed(0);
+		const digits = finalResult.toString().split('');
+		return digits;
 	}
 
 	renderResults() {
 		return (
-			<Results />
+			<Results results={this.getResults} showInfobox={this.showInfobox} />
 		)
 	}
 
@@ -75,7 +108,7 @@ class App extends React.Component {
 				counter={this.state.counter} 
 				question={this.state.question}
 				info={this.state.info}
-				setNextQuestion={this.handleChange}
+				handleAnswer={this.handleAnswer}
 				previousQuestion={this.previousQuestion}
 				showInfobox={this.showInfobox} 
 			 />
